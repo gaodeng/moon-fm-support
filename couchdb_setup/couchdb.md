@@ -64,7 +64,7 @@ curl -X PUT http://admin:admin_password@114.215.127.34:5984/_users/org.couchdb.u
 
 用户 jan 创建后，你发现 Couchdb 同时为这个用户创建了一个数据库 userdb-6a616e (数据库名是前缀 userdb-  加用户名的hex字符串)
 
-那么这个用户的同步地址就是  http://114.215.127.34:5984/userdb-6a616e
+那么这个用户的同步地址就是  http://jan:apple@114.215.127.34:5984/userdb-6a616e
 
 另外 couchdb 默认的情况下是允许匿名创建用户的。可以修改 _users 数据库的权限来禁止匿名创建用户.具体可看这个帖子 https://serverfault.com/questions/742184/couchdb-user-creation-without-authentication-standard-behavior
 
