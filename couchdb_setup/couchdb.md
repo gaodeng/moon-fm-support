@@ -1,4 +1,4 @@
-####Couchdb安装(Ubuntu 18.04: bionic)
+#### Couchdb安装(Ubuntu 18.04: bionic)
 ```
 echo "deb https://apache.bintray.com/couchdb-deb bionic main" \
     | sudo tee -a /etc/apt/sources.list
@@ -51,7 +51,7 @@ Couchdb 的 Web 管理端地址是 http://114.215.127.34:5984/_utils  用户名�
 先通过这个 Web 管理端把 Couchdb 配置为 couch_peruser 模式 (couch_peruser 模式下 couchdb 会为每个_users 数据库中的每个新用户创建一个数据库) 
 ![](6.png)
 
-####创建用户
+#### 创建用户
 
 用 couchdb 管理员账户,创建一个用户名为 jan 密码为 apple 的用户
 ```
