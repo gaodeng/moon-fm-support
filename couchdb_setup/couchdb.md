@@ -1,4 +1,4 @@
-####Couchdb安装(Ubuntu 18.04: bionic)
+#### Couchdb安装(Ubuntu 18.04: bionic)
 ```
 echo "deb https://apache.bintray.com/couchdb-deb bionic main" \
     | sudo tee -a /etc/apt/sources.list
