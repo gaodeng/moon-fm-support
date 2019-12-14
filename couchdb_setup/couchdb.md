@@ -20,12 +20,12 @@ sudo apt-get update && sudo apt-get install couchdb
 
 如果需要支持 https 协议,可以用 nginx 做反向代理 。具体配置看下面链接文档
 https://docs.couchdb.org/en/stable/best-practices/reverse-proxies.html#reverse-proxying-with-nginx
-另外 nginx 做反向代理还需注意 413 – Request Entity Too Large 的问题  https://www.cyberciti.biz/faq/linux-unix-bsd-nginx-413-request-entity-too-large/
-需要把 client_max_body_size 20M; 设置为比较大一点的值
+另外 由于同步的时候会做一些批量操作,可能单个请求数据量比较大, nginx 做反向代理还需注意 413 – Request Entity Too Large 的问题  https://www.cyberciti.biz/faq/linux-unix-bsd-nginx-413-request-entity-too-large/
+需要把 client_max_body_size  设置为比较大一点的值 比如 client_max_body_size 20M;
 
 
 Couchdb 默认的端口是 5984. 假如你的服务器 IP 地址是 114.215.127.34
-那么访问 http://114.215.127.34:5984/ 会看到类型下面的响应
+那么访问 http://114.215.127.34:5984/ 会看到类似下面的响应,你可以通过访问这个地址来看看 Couchdb 是否正确的安装了
 
 ```json
 {
@@ -43,7 +43,7 @@ Couchdb 默认的端口是 5984. 假如你的服务器 IP 地址是 114.215.127.
 }
 
 ```
-你可以通过访问这个地址来看看 Couchdb 是否正确的安装了
+
 
 
 Couchdb 的 Web 管理端地址是 http://114.215.127.34:5984/_utils  用户名是 admin,密码是安装 couchdb 的时候设置的密码
@@ -51,7 +51,17 @@ Couchdb 的 Web 管理端地址是 http://114.215.127.34:5984/_utils  用户名�
 先通过这个 Web 管理端把 Couchdb 配置为 couch_peruser 模式 (couch_peruser 模式下 couchdb 会为每个_users 数据库中的每个新用户创建一个数据库) 
 ![](6.png)
 
-####创建用户
+
+#### 创建 _users 数据库
+
+```
+curl -X PUT http://admin:admin_password@114.215.127.34:5984/_users \
+     -H "Accept: application/json" \
+     -H "Content-Type: application/json" \
+     
+```
+
+#### 在 _users 数据库中创建用户
 
 用 couchdb 管理员账户,创建一个用户名为 jan 密码为 apple 的用户
 ```
