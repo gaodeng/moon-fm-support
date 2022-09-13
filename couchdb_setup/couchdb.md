@@ -50,7 +50,7 @@ Couchdb 默认的端口是 5984. 假如你的服务器 IP 地址是 114.215.127.
 
 Couchdb 的 Web 管理端地址是 http://114.215.127.34:5984/_utils  用户名是 admin,密码是安装 couchdb 的时候设置的密码
 
-先通过这个 Web 管理端把 Couchdb 配置为 couch_peruser 模式 (couch_peruser 模式下 couchdb 会为每个_users 数据库中的每个新用户创建一个数据库) 
+先通过这个 Web 管理端把 Couchdb 配置为 couch_peruser 模式 (couch_peruser 模式下 couchdb 会为每个_users 数据库中的每个新用户创建一个数据库。如果设置中没有出现 couch_peruser 设置选项，点击右上角的 Add Option 按照下图把这三个值添加进去即可) 
 ![](6.png)
 
 
