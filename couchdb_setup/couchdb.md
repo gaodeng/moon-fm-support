@@ -13,7 +13,7 @@ sudo apt install -y couchdb
 「 更多安装指导请看 Couchdb 官方文档 https://docs.couchdb.org/en/stable/install/unix.html 」
 ![](1.png)
 
-如果出现 CouchDB Erlang magic cookie 填写界面，这里填写一个字符串即可。
+如果出现 CouchDB Erlang magic cookie 填写界面，填写一个字符串即可。
 
 ![](2.png)
 
